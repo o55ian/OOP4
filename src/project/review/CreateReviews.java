@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 public class CreateReviews {
 
-    public CreateReviews() {
-
-    }
 
     public void createReview() {
         int CreatedID = 3;

@@ -3,6 +3,7 @@ package project;
 import project.Model.Items;
 import project.Model.Model;
 import project.Views.*;
+import project.review.CreateReviews;
 
 public class Controller {
     Model mModel;
@@ -108,6 +109,9 @@ public class Controller {
                 doMainMenu();
                 break;
             case 1 :
+              CreateReviews createReviews = new CreateReviews();
+              createReviews.createReview();
+
 
                 //Create a review for an Item.
 
