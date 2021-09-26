@@ -4,6 +4,7 @@ import project.Model.Items;
 import project.Model.Model;
 import project.Views.*;
 import project.review.CreateReviews;
+import project.review.ReviewObject;
 
 public class Controller {
     Model mModel;
@@ -15,11 +16,14 @@ public class Controller {
 
     public Controller() {
         mModel = new Model();
+        mModel.addItem(new Items ("Jeans", 800.0));
+        mModel.addItem(new Items ("Shirt", 1500.0));
         mMainMenuView = new ViewMainMenu();
         mItemOptionsView = new ViewItemOptions();
         mReviewOptionsView = new ViewReviewsOptions();
         mTransactionHistoryOptionsView = new ViewTransactionHistoryOptions();
         mCreateItemView = new ViewCreateItem();
+
     }
 
     public void main() {
@@ -109,7 +113,7 @@ public class Controller {
                 doMainMenu();
                 break;
             case 1 :
-              CreateReviews createReviews = new CreateReviews();
+              CreateReviews createReviews = new CreateReviews(mModel);
               createReviews.createReview();
 
 

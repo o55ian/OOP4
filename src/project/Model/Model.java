@@ -16,4 +16,5 @@ public class Model {
     public void addItem(Items item) { mItems.put(item.getID(), item); }
     public void removeItem(UUID id) { mItems.remove(id); }
     public Items getItemByID(UUID id) { return mItems.get(id); }
+
 }

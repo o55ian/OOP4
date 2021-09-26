@@ -1,27 +1,44 @@
 package project.review;
 
 
+import project.Model.Items;
+import project.Model.Model;
+import project.Model.RatingAndComment;
+
 import java.util.Scanner;
+import java.util.UUID;
 
 public class CreateReviews {
 
+    private Model mModel;
+
+    public CreateReviews( Model model) {
+        this.mModel = model;
+    }
 
     public void createReview() {
-        int CreatedID = 3;
-        //just making an ID for the program to run. Feature 2.1 Should make the ID.
+
+
+
+        for (Items item : mModel.mItems.values()) {
+            System.out.println(item.getID().toString() + ": " + item.getName());
+        }
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the ID of the item you wish to review");
-        int ID = scanner.nextInt();
-
-        if (ID == CreatedID) {
+        String id = scanner.nextLine();
+        UUID uuid = UUID.fromString(id);
+        Items item = mModel.getItemByID(uuid);
+//mModel.getItemByID(ID);
+        if (item != null) {
             System.out.println("Please give a score from 1-5");
 
-            int Score = scanner.nextInt();
-
-            if (Score > 0 && Score < 6) {
-                System.out.println("You have given " + ID + " " + Score + " stars");
+           int score = scanner.nextInt();
+            if (score > 0 && score < 6) {
+                System.out.println("You have given " + id + " " + score + " stars");
+                RatingAndComment ratingAndComment = new RatingAndComment(score);
+                item.addReview(ratingAndComment);
                 System.out.println("Your item review was registered successfully."
                 );
 
@@ -30,8 +47,11 @@ public class CreateReviews {
             }
         } else {
 
-        System.out.println("Item "+ ID + " was not registered yet");
+        System.out.println("Item "+ id + " was not registered yet");
 
         }
+
     }
+
+
 }
