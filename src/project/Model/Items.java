@@ -1,12 +1,15 @@
 package project.Model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 public class Items {
     private UUID mID;
     private String mName;
     private Double mPrice;
-    private RatingAndComment ratingsAndComments[] = new RatingAndComment[100];
+   // private RatingAndComment ratingsAndComments[] = new RatingAndComment[100];
+    ArrayList<RatingAndComment> ratingsAndComments = new ArrayList<RatingAndComment>();
 
     public Items(String name, Double price) {
         mID = UUID.randomUUID();
@@ -22,17 +25,7 @@ public class Items {
 
 
 
-       for (int i=0; i<ratingsAndComments.length; i++){
 
-           if (ratingsAndComments[i] == null)
-
-           ratingsAndComments[i] = ratingAndComment;
-           if (ratingsAndComments[i] != null){
-               ratingsAndComments[i] = ratingAndComment;
-               break;
-           }
-
-           else{}
        }
 
 
@@ -41,5 +34,5 @@ public class Items {
 
    }
 
-}
+
 
