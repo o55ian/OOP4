@@ -9,7 +9,7 @@ public class Items {
     private String mName;
     private Double mPrice;
    // private RatingAndComment ratingsAndComments[] = new RatingAndComment[100];
-    ArrayList<RatingAndComment> ratingsAndComments = new ArrayList<RatingAndComment>();
+    ArrayList<RatingAndComment> ratingsAndComments = new ArrayList<>();
 
     public Items(String name, Double price) {
         mID = UUID.randomUUID();
@@ -24,7 +24,14 @@ public class Items {
    public void addReview(RatingAndComment ratingAndComment){
 
 
+        ratingsAndComments.add(ratingAndComment);
 
+
+
+       }
+       public  void removeReview(RatingAndComment ratingAndComment){
+
+        ratingsAndComments.remove(ratingAndComment);
 
        }
 
