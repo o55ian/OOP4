@@ -29,11 +29,7 @@ public class Items {
 
 
        }
-       public  void removeReview(RatingAndComment ratingAndComment){
 
-        ratingsAndComments.remove(ratingAndComment);
-
-       }
 
 
 
