@@ -13,4 +13,12 @@ public class RatingAndComment {
     public RatingAndComment(int rating){
         this.rating = rating;
     }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public String getComment() {
+        return comment;
+    }
 }

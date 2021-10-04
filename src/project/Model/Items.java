@@ -1,14 +1,15 @@
 package project.Model;
 
+import project.Utilities;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.UUID;
 
 public class Items {
     private UUID mID;
     private String mName;
     private Double mPrice;
-   // private RatingAndComment ratingsAndComments[] = new RatingAndComment[100];
+    // private RatingAndComment ratingsAndComments[] = new RatingAndComment[100];
     ArrayList<RatingAndComment> ratingsAndComments = new ArrayList<>();
 
     public Items(String name, Double price) {
@@ -17,25 +18,30 @@ public class Items {
         mPrice = price;
     }
 
-    public UUID getID() { return mID; }
+    public UUID getID() {
+        return mID;
+    }
 
-    public String getName() { return mName; }
+    public String getName() {
+        return mName;
+    }
 
-   public void addReview(RatingAndComment ratingAndComment){
+
+    public RatingAndComment getReview(int index) {
+        RatingAndComment element = ratingsAndComments.get(index);
+        return element;
+    }
+
+    public void addReview(RatingAndComment ratingAndComment) {
 
 
         ratingsAndComments.add(ratingAndComment);
 
 
-
-       }
-
+    }
 
 
-
-
-
-   }
+}
 
 
 

@@ -4,7 +4,7 @@ import project.Model.Items;
 import project.Model.Model;
 import project.Views.*;
 import project.review.CreateReviews;
-import project.review.ReviewObject;
+import project.review.PrintReviewManager;
 
 public class Controller {
     Model mModel;
@@ -115,13 +115,13 @@ public class Controller {
             case 1 :
               CreateReviews createReviews = new CreateReviews(mModel);
               createReviews.createReview();
-
-
-                //Create a review for an Item.
-
+              //Create a review for an Item.
+                break;
             case 2 :
+                PrintReviewManager printReviewManager = new PrintReviewManager();
+                printReviewManager.printReview(mModel);
                 //Print a specific review of an Item.
-
+                break;
             case 3 :
                 //Print all reviews of an Item.
 

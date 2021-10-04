@@ -37,8 +37,9 @@ public class CreateReviews {
             System.out.println("Please add a comment, if you do not want to add a comment, press enter");
 
            String comment = Utilities.stringInput();
-           if (comment == null)
+           if (comment.equals("")) {
                comment = null;
+           }
             if (score > 0 && score < 6) {
                 System.out.println("You have given " + id + " " + score + " stars");
                 RatingAndComment ratingAndComment = new RatingAndComment(score, comment);
