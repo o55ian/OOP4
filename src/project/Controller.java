@@ -18,6 +18,9 @@ public class Controller {
         mModel = new Model();
         mModel.addItem(new Items ("Jeans", 800.0));
         mModel.addItem(new Items ("Shirt", 1500.0));
+        for (Items item : mModel.mItems.values()) {
+            System.out.println(item.getID().toString() + ": " + item.getName());
+        }
         mMainMenuView = new ViewMainMenu();
         mItemOptionsView = new ViewItemOptions();
         mReviewOptionsView = new ViewReviewsOptions();

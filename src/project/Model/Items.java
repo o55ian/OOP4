@@ -12,6 +12,7 @@ public class Items {
     // private RatingAndComment ratingsAndComments[] = new RatingAndComment[100];
     ArrayList<RatingAndComment> ratingsAndComments = new ArrayList<>();
 
+
     public Items(String name, Double price) {
         mID = UUID.randomUUID();
         mName = name;
@@ -24,6 +25,10 @@ public class Items {
 
     public String getName() {
         return mName;
+    }
+
+    public ArrayList<RatingAndComment> getRatingsAndComments() {
+        return ratingsAndComments;
     }
 
 

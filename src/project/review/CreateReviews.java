@@ -21,9 +21,7 @@ public class CreateReviews {
 
 
 
-        for (Items item : mModel.mItems.values()) {
-            System.out.println(item.getID().toString() + ": " + item.getName());
-        }
+
 
         System.out.println("Please enter the ID of the item you wish to review");
         String id = Utilities.stringInput();
