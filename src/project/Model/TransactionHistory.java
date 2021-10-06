@@ -1,29 +1,24 @@
 package project.Model;
 public class TransactionHistory {
     private Items mItems;
-    private double mAmount;
+    private Integer mQuantity;
 
-    private TransactionHistory (Items items, double amount){
+    private TransactionHistory (Items items, Integer quantity){
         mItems = items;
-        mAmount = amount;
+        mQuantity = quantity;
     }
 
     public Items getItems(){
         return mItems;
     }
 
-    public double getAmount(){
-        return mAmount;
+    public double getQuantity(){
+        return mQuantity;
     }
 
-    @Override
-    public String toString() {
-        String retValue = (mItems.getID() + ": ");
-        retValue += (getAmount() + "item(s). ");
-        retValue += (" SEK");
-
-
-        return retValue;
+    public double totalSum(){
+        double total = getItems().getPrice() * getQuantity();
+        return total;
     }
 
 }

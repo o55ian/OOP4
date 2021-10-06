@@ -18,6 +18,8 @@ public class Items {
 
     public String getName() { return mName; }
 
+    public Double getPrice() { return mPrice; }
+
    public void addReview(RatingAndComment ratingAndComment){
 
 

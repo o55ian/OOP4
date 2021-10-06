@@ -29,11 +29,11 @@ public class Model {
         }
         return itemTransactions;
     }
-
+//changed getAmount to getQuantity
     public Double getTotal(){
         Double totalProfit = 0.0;
         for (TransactionHistory transactions : mTransactionHistory) {
-            totalProfit += transactions.getAmount();
+            totalProfit += transactions.getQuantity();
         }
         return totalProfit;
     }

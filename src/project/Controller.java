@@ -2,9 +2,14 @@ package project;
 
 import project.Model.Items;
 import project.Model.Model;
+import project.Model.TransactionHistory;
 import project.Views.*;
 import project.review.CreateReviews;
+import project.Views.ViewTransactionHistory;
 import project.review.ReviewObject;
+
+import java.util.Collection;
+import java.util.UUID;
 
 public class Controller {
     Model mModel;
@@ -180,9 +185,16 @@ public class Controller {
 
             case 7 :
                 //Print all transactions of a specific item.
-
+                ViewTransactionHistory viewTransactionHistory = new ViewTransactionHistory();
+                UUID itemID = viewTransactionHistory.readItemID();
+                Items item = mModel.getItemByID(itemID);
+                Collection<TransactionHistory> itemTransactionHistory = mModel.getTransactionForItem(item);
+                System.out.println();
             case 8 :
                 //Print item with highest profit.
+
+                break;
+            default:
 
         }
     }
