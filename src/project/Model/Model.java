@@ -19,7 +19,12 @@ public class Model {
     public void removeItem(UUID id) { mItems.remove(id); }
     public Items getItemByID(UUID id) { return mItems.get(id); }
 
+    public void getTransactionHistoryList() {
+        for (int i = 0; i < mTransactionHistory.size(); i++){
+            System.out.println(mTransactionHistory);
+        }
 
+    }
     public Collection<TransactionHistory> getTransactionForItem(Items item) {
         ArrayList<TransactionHistory> itemTransactions = new ArrayList<>();
         for (TransactionHistory transactionHistory : mTransactionHistory) {

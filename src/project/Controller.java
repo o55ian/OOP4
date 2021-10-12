@@ -6,7 +6,6 @@ import project.Model.TransactionHistory;
 import project.Views.*;
 import project.review.CreateReviews;
 import project.Views.ViewTransactionHistory;
-import project.review.ReviewObject;
 
 import java.util.Collection;
 import java.util.UUID;
@@ -18,6 +17,7 @@ public class Controller {
     ViewReviewsOptions mReviewOptionsView;
     ViewTransactionHistoryOptions mTransactionHistoryOptionsView;
     ViewCreateItem mCreateItemView;
+    ViewTransactionHistory mTransactionHistoryView;
 
     public Controller() {
         mModel = new Model();
@@ -28,6 +28,7 @@ public class Controller {
         mReviewOptionsView = new ViewReviewsOptions();
         mTransactionHistoryOptionsView = new ViewTransactionHistoryOptions();
         mCreateItemView = new ViewCreateItem();
+        mTransactionHistoryView = new ViewTransactionHistory();
 
     }
 
@@ -182,17 +183,25 @@ public class Controller {
 
             case 6 :
                 //Print the number of units sold of a specific item.
-
+                System.out.println("testing git");
             case 7 :
                 //Print all transactions of a specific item.
-                ViewTransactionHistory viewTransactionHistory = new ViewTransactionHistory();
-                UUID itemID = viewTransactionHistory.readItemID();
+                UUID itemID;
+
+                //output list of all items
+                mTransactionHistoryView.listItems(mModel.getItemList());
+                //store item ID into variable
+                itemID = mTransactionHistoryView.readItemID();
+                //output transaction history for item
+                mTransactionHistoryView.showTransactionData(itemID);
                 Items item = mModel.getItemByID(itemID);
+                mTransactionHistoryView.showTransactionData(item);
                 Collection<TransactionHistory> itemTransactionHistory = mModel.getTransactionForItem(item);
                 System.out.println();
             case 8 :
                 //Print item with highest profit.
-
+                ViewTransactionHistory viewTransactionHistory1 = new ViewTransactionHistory();
+                viewTransactionHistory1.readItemID();
                 break;
             default:
 

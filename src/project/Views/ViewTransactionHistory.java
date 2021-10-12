@@ -25,15 +25,15 @@ public class ViewTransactionHistory {
         return itemID;
     }
     //render data
-    public void showTransactionData(Items item, TransactionHistory transactionHistory){
+    public void showTransactionData(TransactionHistory transactionHistory){
         /*Transactions for item: <item ID>: <item name>. <unit price> SEK
         <item ID>: <amount>  item(s). <purchase price> SEK
         */
-        String output = "Transactions for items: " + item.getID().toString() + " : ";
-        output += item.getName() + ". ";
-        output += item.getPrice() + " SEK\n";
+        String output = "Transactions for items: " + transactionHistory.getItems().getID().toString() + " : ";
+        output += transactionHistory.getItems().getName() + ". ";
+        output += transactionHistory.getItems().getPrice() + " SEK\n";
 
-        output += item.getID().toString() + ": ";
+        output += transactionHistory.getItems().getID().toString() + ": ";
         output += transactionHistory.getQuantity() + " item(s). ";
         output += transactionHistory.totalSum() + " SEK";
 
@@ -51,8 +51,8 @@ public class ViewTransactionHistory {
         //Transactions for item: <item ID>: <item name>. <unit price> SEK
         //No transactions have been registered for item <item ID> yet.
         System.out.println("Transactions for item: " + item.getID().toString() + " :" + item.getName()
-                + ". " + item.getPrice() + " SEK");
-        System.out.println("No transactions have been registered for item " + item.getID().toString() + " yet.");
+                + ". " + item.getPrice() + " SEK.\n" +
+                "No transactions have been registered for item " + item.getID().toString() + " yet.");
     }
     //return to previous menu
     public void returnTransactionOptions(){
